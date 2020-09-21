@@ -1,13 +1,13 @@
 public class Dictionary {
     private Word[] words = new Word[100];
-    private int no = 0;
+    private int length;
 
     public Dictionary() {
 
     }
 
-    public int getNo() {
-        return no;
+    public int getLength() {
+        return length;
     }
 
     public String getIndividualWords_explain(int i) {
@@ -19,13 +19,13 @@ public class Dictionary {
     }
 
     public void addWord(Word word) {
-        words[no] = new Word(word);
-        no++;
+        words[length] = new Word(word);
+        length += 1;
     }
 
     public Dictionary(Dictionary dictionary) {
         this.words = dictionary.getWords();
-        this.no = dictionary.no();
+        this.length = dictionary.getLength;
     }
 
 
