@@ -1,6 +1,6 @@
 public class DictionaryCommandline {
     private Dictionary dictionary;
-    private DictionaryManagement dic;
+    private DictionaryManagement dicManage;
 
     public DictionaryCommandline() {
 
@@ -11,19 +11,18 @@ public class DictionaryCommandline {
     }
 
     public void showAllWords() {
-        int i;
         System.out.println("No\tEnglish\tVietnamese");
-        for(i = 0; i < dictionary.getNo(); i ++) {
+        for(int i = 0; i < dictionary.getLength(); i ++) {
             System.out.println((i + 1) +dictionary.getIndividualWords_target(i) +
                     dictionary.getIndividualWords_explain(i));
         }
     }
 
     public void dictionaryBasic() {
-        dic = new DictionaryManagement(dictionary);
-        dic.setDictionary(dictionary);
-        dic.insertFromCommandline();
-        this.dictionary = dic.out();
+        dicManage = new DictionaryManagement(dictionary);
+        dicManage.setDictionary(dictionary);
+        dicManage.insertFromCommandline();
+        this.dictionary = dicManage.out();
         showAllWords();
     }
 }
