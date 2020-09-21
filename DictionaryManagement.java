@@ -12,18 +12,18 @@ public class DictionaryManagement {
     }
 
     public void insertFromCommandline() {
-        Scanner sc = new Scanner(System.in);
+        Scanner scanner = new Scanner(System.in);
         int count;
         System.out.println("So tu:");
-        count = sc.nextInt();
-        sc.nextLine();
+        count = scanner.nextInt();
+        scanner.nextLine();
         Word tempW = new Word();
         String temp;
         int i;
         for (i = 0; i < count; i++) {
-            temp = sc.nextLine();
+            temp = scanner.nextLine();
             temp.setWord_target(temp);
-            temp = sc.nextLine();
+            temp = scanner.nextLine();
             temp.setWord_explain(temp);
             dictionary.addWord(tempW);
         }
